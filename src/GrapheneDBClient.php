@@ -8,20 +8,45 @@ use Neoxygen\GrapheneDBClient\HttpClient\GuzzleHttpClient,
 
 class GrapheneDBClient
 {
+    /**
+     * @var
+     */
     private $email;
 
+    /**
+     * @var
+     */
     private $password;
 
+    /**
+     * @var GuzzleHttpClient
+     */
     private $httpClient;
 
+    /**
+     * @var
+     */
     private $userId;
 
+    /**
+     * @var
+     */
     private $userRole;
 
+    /**
+     * @var array
+     */
     private $databases = [];
 
+    /**
+     * @var array
+     */
     private $dbMap = [];
 
+    /**
+     * @param $email
+     * @param $password
+     */
     public function __construct($email, $password)
     {
         $this->email = $email;
@@ -29,6 +54,10 @@ class GrapheneDBClient
         $this->httpClient = new GuzzleHttpClient();
     }
 
+    /**
+     * @return mixed
+     * @throws GrapheneDBClientException
+     */
     public function getVersions()
     {
         $this->checkToken();
@@ -38,6 +67,12 @@ class GrapheneDBClient
         return $versions;
     }
 
+    /**
+     * @param $name
+     * @param string $version
+     * @return Database
+     * @throws GrapheneDBClientException
+     */
     public function createDatabase($name, $version = 'v215')
     {
         $this->checkToken();
@@ -59,6 +94,10 @@ class GrapheneDBClient
         return $db;
     }
 
+    /**
+     * @return array
+     * @throws GrapheneDBClientException
+     */
     public function getDatabases()
     {
         $this->checkToken();
@@ -73,6 +112,11 @@ class GrapheneDBClient
         return $this->databases;
     }
 
+    /**
+     * @param $name
+     * @return mixed
+     * @throws GrapheneDBClientException
+     */
     public function getDatabase($name)
     {
         $this->checkToken();
@@ -86,6 +130,11 @@ class GrapheneDBClient
         return $this->databases[$name];
     }
 
+    /**
+     * @param $id
+     * @return bool
+     * @throws GrapheneDBClientException
+     */
     public function deleteDatabase($id)
     {
         $endpoint = 'https://app.graphenedb.com/databases/' . $id;
@@ -96,6 +145,9 @@ class GrapheneDBClient
         return true;
     }
 
+    /**
+     *
+     */
     public function deleteAllDatabases()
     {
         $this->checkToken();
