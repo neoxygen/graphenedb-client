@@ -1,12 +1,13 @@
 # GrapheneDB Client for PHP 5.4+
 
+A PHP Client for the popular [GrapheneDB](http://www.graphenedb.com) | Neo4j as a Service.
+
 ![img](http://www.graphenedb.com/images/logo.png)
 
 [![Latest Stable Version](https://poser.pugx.org/neoxygen/graphenedb-client/v/stable.svg)](https://packagist.org/packages/neoxygen/graphenedb-client)
 [![License](https://poser.pugx.org/neoxygen/graphenedb-client/license.svg)](https://packagist.org/packages/neoxygen/graphenedb-client)
 [![Build Status](https://travis-ci.org/neoxygen/graphenedb-client.svg?branch=master)](https://travis-ci.org/neoxygen/graphenedb-client)
 
-A PHP Client for the popular [GrapheneDB](http://www.graphenedb.com) | Neo4j as a Service.
 
 ### Requirements
 
