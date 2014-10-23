@@ -1,18 +1,15 @@
 language: php
-
 php:
-    - 5.4
-    - 5.5
-
+- 5.4
+- 5.5
 before_script:
-    - composer self-update
-    - composer install --prefer-source --no-interaction
-
+- composer self-update
+- composer install --prefer-source --no-interaction
 script:
-    - bin/phpunit
-
+- bin/phpunit
 notifications:
-    email: "willemsen.christophe@gmail.com"
-
-secure: "vL4ABaZZliZlU34k2kDPefyHt/y1amdFrmzXC80aYakH1Kmsvao+Vxxnf6pJdguVROde4KiqyHVQOH+WAguqntFrTXOAlFTDKX1aL6907iVVYDr7ejy6DUYAi7IJfionDZhQqD3qTXEaT+vy8vEJX3voISaY82MDLw17W5tH/Qo="
-secure: "YjPHs4asQmy9cUUnfLPEzsRhYcNPU7i5f98dupOkaP+yXMA0hRXT4NdKZ7/ILbMgPZVWp1Tzf/W+auhEZIzHkLvlGNuFco39j30G4mim+S/rwJj+Ob05S3FUp+8st+o9YMcot7w0y2S//pW4nJOGE/yqF0jDZkyyHvslWvOYnGw="
+  email: willemsen.christophe@gmail.com
+env:
+  global:
+  - secure: b9ejfQJScdQeX5WsjhFK5u1xVOKpoypAbhztxIrbjI9qUFc/IgioiThe2YjaHxgMbFhxkW6+k4/Na95OHRgPz+GJu8GHrrDhhXh+4/8QgHBoP0PzbthMS9vtL25a2wK8u6QNpNVuWgUiQswwrSzcFgu64gBcLoKpi5YqQq41rvQ=
+  - secure: aPIHVSOmAytK48e/YdHz4wvBa6fIwKki+V7FhcHJbkQbdMwm+ilPK4NhlQRpLv/d7itma9ksSAHVvuwURX1tdaVGn+FgfiZ6GmKmUkv5HyC7GlSXp6aQrppTfYmQDKy/hNjJlJNgu0TK5Qu52mRf2zenfEfOm0YQiUXcvib7+tc=
