@@ -94,10 +94,11 @@ This will return you an instance of `Neoxygen\GrapheneDBClient\Database`.
 
 #### Deleting a database
 
-You need to provide the name of the database you want to delete :
+You need to provide the `id` of the database you want to delete :
 
 ```php
-$client->deleteDatabase('test');
+$db = $client->getDatabase('test');
+$client->deleteDatabase($db->getId());
 ```
 
 This will return you true, or throw an exception if the database does not exist.
