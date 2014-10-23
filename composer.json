@@ -1,0 +1,35 @@
+{
+    "name": "neoxygen/graphenedb-client",
+    "type": "library",
+    "description": "Http Client for the GrapheneDB Neo4j as as Service",
+    "keywords": [
+        "neo4j",
+        "graph",
+        "php",
+        "graphenedb",
+        "client"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christophe Willemsen",
+            "email": "chris@neoxygen.io"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "4.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Neoxygen\\GrapheneDBClient\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Neoxygen\\GrapheneDBClient\\Tests\\": "tests/GrapheneDBClient/Tests"
+        }
+    }
+}
