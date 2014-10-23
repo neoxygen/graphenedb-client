@@ -47,13 +47,13 @@ class GrapheneDBClientTest extends \PHPUnit_Framework_TestCase
 
     private function buildClient()
     {
-        if ($GLOBALS['GRAPHENEDB_USER'] == null){
+        if (getenv('GRAPHENEDB_USER') == null){
             $file = getcwd().'/graphenedb_info.yml';
             $info = Yaml::parse($file);
         } else {
             $info = [
-                'email' => $GLOBALS['GRAPHENEDB_USER'],
-                'password' => $GLOBALS['GRAPHENEDB_PASSWORD']
+                'email' => getenv('GRAPHENEDB_USER'),
+                'password' => getenv('GRAPHENEDB_PASSWORD')
             ];
         }
 
