@@ -10,5 +10,6 @@ script:
 notifications:
   email: willemsen.christophe@gmail.com
 env:
-  - secure: b9ejfQJScdQeX5WsjhFK5u1xVOKpoypAbhztxIrbjI9qUFc/IgioiThe2YjaHxgMbFhxkW6+k4/Na95OHRgPz+GJu8GHrrDhhXh+4/8QgHBoP0PzbthMS9vtL25a2wK8u6QNpNVuWgUiQswwrSzcFgu64gBcLoKpi5YqQq41rvQ=
-  - secure: aPIHVSOmAytK48e/YdHz4wvBa6fIwKki+V7FhcHJbkQbdMwm+ilPK4NhlQRpLv/d7itma9ksSAHVvuwURX1tdaVGn+FgfiZ6GmKmUkv5HyC7GlSXp6aQrppTfYmQDKy/hNjJlJNgu0TK5Qu52mRf2zenfEfOm0YQiUXcvib7+tc=
+  matrix:
+    - secure: b9ejfQJScdQeX5WsjhFK5u1xVOKpoypAbhztxIrbjI9qUFc/IgioiThe2YjaHxgMbFhxkW6+k4/Na95OHRgPz+GJu8GHrrDhhXh+4/8QgHBoP0PzbthMS9vtL25a2wK8u6QNpNVuWgUiQswwrSzcFgu64gBcLoKpi5YqQq41rvQ=
+    - secure: aPIHVSOmAytK48e/YdHz4wvBa6fIwKki+V7FhcHJbkQbdMwm+ilPK4NhlQRpLv/d7itma9ksSAHVvuwURX1tdaVGn+FgfiZ6GmKmUkv5HyC7GlSXp6aQrppTfYmQDKy/hNjJlJNgu0TK5Qu52mRf2zenfEfOm0YQiUXcvib7+tc=
