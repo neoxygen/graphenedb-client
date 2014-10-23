@@ -2,7 +2,7 @@
 
 ![img](http://www.graphenedb.com/images/logo.png)
 
-A PHP Client for the popular [GrapheneDB](http://www.graphenedb.com)| Neo4j as a Service.
+A PHP Client for the popular [GrapheneDB](http://www.graphenedb.com) | Neo4j as a Service.
 
 ### Requirements
 
