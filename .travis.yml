@@ -1,0 +1,18 @@
+language: php
+
+php:
+    - 5.4
+    - 5.5
+
+before_script:
+    - composer self-update
+    - composer install --prefer-source --no-interaction
+
+script:
+    - bin/phpunit
+
+notifications:
+    email: "willemsen.christophe@gmail.com"
+
+secure: "vL4ABaZZliZlU34k2kDPefyHt/y1amdFrmzXC80aYakH1Kmsvao+Vxxnf6pJdguVROde4KiqyHVQOH+WAguqntFrTXOAlFTDKX1aL6907iVVYDr7ejy6DUYAi7IJfionDZhQqD3qTXEaT+vy8vEJX3voISaY82MDLw17W5tH/Qo="
+secure: "YjPHs4asQmy9cUUnfLPEzsRhYcNPU7i5f98dupOkaP+yXMA0hRXT4NdKZ7/ILbMgPZVWp1Tzf/W+auhEZIzHkLvlGNuFco39j30G4mim+S/rwJj+Ob05S3FUp+8st+o9YMcot7w0y2S//pW4nJOGE/yqF0jDZkyyHvslWvOYnGw="
