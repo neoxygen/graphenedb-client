@@ -3,7 +3,8 @@
 namespace Neoxygen\GrapheneDBClient\HttpClient;
 
 use GuzzleHttp\Client,
-    GuzzleHttp\Cookie\CookieJar;
+    GuzzleHttp\Cookie\CookieJar,
+    GuzzleHttp\Exception\RequestException;
 use Neoxygen\GrapheneDBClient\Exception\GrapheneDBClientException;
 
 class GuzzleHttpClient

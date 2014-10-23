@@ -7,17 +7,48 @@ use Symfony\Component\Yaml\Yaml;
 
 class GrapheneDBClientTest extends \PHPUnit_Framework_TestCase
 {
-    public function testConnection()
+    private $createdDBName = 'helllllllll666';
+
+    public function testGetVersions()
     {
         $client = $this->buildClient();
+        $v = $client->getVersions();
+        $this->assertArrayHasKey('default', $v);
+        $this->assertArrayHasKey('versions', $v);
+        $this->assertNotEmpty($v['versions']);
+    }
 
-        print_r($client->getVersions());
+    public function testCreateDatabase()
+    {
+        $client = $this->buildClient();
+        $dbName = $this->createdDBName;
+        $db = $client->createDatabase($dbName);
+        $this->assertEquals($dbName, $db->getName());
+    }
+
+    public function testGetDatabase()
+    {
+        $client = $this->buildClient();
+        $dbs = $client->getDatabases();
+        $this->assertTrue(count($dbs) >= 1);
+
+        $db = $client->getDatabase($this->createdDBName);
+        $this->assertEquals($this->createdDBName, $db->getName());
+    }
+
+    public function testDeleteDatabase()
+    {
+        $client = $this->buildClient();
+        $db = $client->getDatabase($this->createdDBName);
+        $client->deleteDatabase($db->getId());
+        $dbs = $client->getDatabases();
+        $this->assertFalse(array_key_exists($this->createdDBName, $dbs));
     }
 
     private function buildClient()
     {
-        if (!getenv('GRAPHENEDB_USER')){
-            $file = getcwd().'/.graphenedb_info.yml';
+        if (getenv('GRAPHENEDB_USER') == null){
+            $file = getcwd().'/graphenedb_info.yml';
             $info = Yaml::parse($file);
         } else {
             $info = [
